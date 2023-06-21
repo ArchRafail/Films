@@ -5,6 +5,8 @@ ASP.Net WebApp project about films on RazorPage. DbContext with SqlServer. Repos
 <h3>Pages</h3>
 Website about films with one Page on MenuTab: Films (Index).</br>
 Each film that shows on <strong>Index</strong> page wrapped in card.</br>
+Page has filters by category, actor, release year, rental rate, length, rating and replacement cost.</br>
+Filtering can be reseted by pressing Clear button.
 </br>
 <h3>Services</h3>
 FilmsService provides us only one method - GetAll.</br>
