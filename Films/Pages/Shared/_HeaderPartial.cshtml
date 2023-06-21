@@ -1,0 +1,22 @@
+﻿@{
+    string path = Context.Request.Path;
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">Films Catalogue</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav nav-pills flex-grow-1 gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-center @(path.EndsWith("/") ? "active text-white" : "text-dark")" asp-area="" asp-page="/Index" style="min-width: 90px;">Films</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

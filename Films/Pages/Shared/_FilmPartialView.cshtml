@@ -1,0 +1,79 @@
+﻿@model Films.Models.Film
+@{
+}
+@if (Model != null)
+{
+    <h4 class="card-title text-center mb-3" style="min-height: 58px;">@Model.Title</h4>
+
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <p>Description: <strong>@Model.Description</strong></p>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.ReleaseYear))
+    {
+        <p>Release year: <strong>@Model.ReleaseYear</strong></p>
+    }
+
+    @if (Model.Categories != null)
+    {
+        <div class="row justify-content-start">
+            <div class="flex-grow-0 flex-shrink-0" style="width: 35%; margin-right: -1.25rem;">
+                <p>Categories:</p>
+            </div>
+            <div class="col-auto d-flex flex-column">
+                @foreach (var category in Model.Categories)
+                {
+                    <p class="mb-0">
+                        <strong>@category.Name</strong>
+                    </p>
+                }
+            </div>
+        </div>
+    }
+
+    <p>Language: <strong>@Model.Language.Name</strong></p>
+
+    @if (Model.OriginalLanguage != null)
+    {
+        <p>Original language: <strong>@Model.OriginalLanguage.Name</strong></p>
+    }
+
+    @if (Model.Actors != null)
+    {
+        <div class="row justify-content-start gap-2 mb-3">
+            <div class="flex-grow-0 flex-shrink-0" style="width: 25%">
+                <p>Actors:</p>
+            </div>
+            <div class="col-auto d-flex flex-column">
+                @foreach (var actor in Model.Actors)
+                {
+                    <p class="mb-0">
+                        <strong>@actor.FirstName @actor.LastName</strong>
+                    </p>
+                }
+            </div>
+        </div>
+    }
+
+    <p>Rental Duration: <strong>@Model.RentalDuration</strong> <span>@(Model.RentalDuration == 1 ? "day" : "days")</span></p>
+    <p>Rental Rate: <strong>@Model.RentalRate</strong></p>
+
+    @if (Model.Length != null)
+    {
+        <p>Length: <strong>@Model.Length</strong> min.</p>
+    }
+
+    <p>Replacement Cost: <strong>@Model.ReplacementCost</strong> €</p>
+
+    @if (!string.IsNullOrEmpty(Model.Rating))
+    {
+        <p>Rating: <strong>@Model.Rating</strong></p>
+    }
+    @if (!string.IsNullOrEmpty(Model.SpecialFeatures))
+    {
+        <p>Special features: <strong>@Model.SpecialFeatures</strong></p>
+    }
+
+    <p>Last Update: <strong>@Model.LastUpdate</strong></p>
+}
